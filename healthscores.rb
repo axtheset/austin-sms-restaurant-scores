@@ -41,8 +41,4 @@ get '/healthscores' do
     r.Message message
   end
   twiml.text
-
-
-  
-
 end
