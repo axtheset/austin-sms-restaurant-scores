@@ -19,10 +19,9 @@ get '/healthscores' do
 
   @response_data = HTTParty.get(civic_data_url, :headers => headers, :query => {:sql => query}) #URI::encode(query)
   
-  if @response_data.nil?
-    message = "No restaurant found with the name #{body}"
-  else
-    data = @response_data.parsed_response["result"]["records"]
+  data = @response_data.parsed_response["result"]["records"]
+  
+  if data.any?
     data.sort! { |id1, id2| id2["Inspection Date"] <=> id1["Inspection Date"] }
     
     latest_inspection = data.first
@@ -33,6 +32,8 @@ get '/healthscores' do
     message += "Address: #{latest_inspection['Address']}"
     message += "Last Inspection Date: #{inspection_date.strftime("%m/%d/%Y")}\n"
     message += "Score: #{latest_inspection['Score']}"
+  else
+    message = "No restaurant found with the name #{body}"
   end
 
   #Send the response
@@ -40,6 +41,8 @@ get '/healthscores' do
     r.Message message
   end
   twiml.text
+
+
   
 
 end
