@@ -8,7 +8,7 @@ The application was built using the data from the dataset [Restaurant Health Ins
 
 ### Built with
 
-* [Sinatra](http://www.sinatrarb.com/) Sinatra has taken the stage...
-* [Twilio](https://www.twilio.com/) It doesn't get any easier for SMS.
-* [HTTParty](https://github.com/jnunemaker/httparty) HTTP done easy.
+* [Sinatra](http://www.sinatrarb.com/) has taken the stage...
+* [Twilio](https://www.twilio.com/) it just doesn't get any easier for SMS.
+* [HTTParty](https://github.com/jnunemaker/httparty) Makes http fun again!
 * [CivicData.com](http://www.civicdata.com/en/home) API.
