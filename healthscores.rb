@@ -7,6 +7,7 @@ require 'json'
 get '/healthscores' do
   sender = params[:From]
   body = params[:Body]
+  body.gsub!("'","''")
 
   civic_data_url = 'http://www.civicdata.com/api/action/datastore_search_sql'
   resource_id = '6ad5ce43-7c67-425d-8ccc-d18fd95c6d64'
