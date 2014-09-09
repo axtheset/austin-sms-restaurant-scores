@@ -32,7 +32,7 @@ get '/healthscores' do
     message = "Restaurant Name: #{latest_inspection['Restaurant Name']}\n"
     message += "Address: #{latest_inspection['Address']}"
     message += "Last Inspection Date: #{inspection_date.strftime("%m/%d/%Y")}\n"
-    message += "Score: #{latest_inspection['Score']}"
+    message += "Score: #{latest_inspection['Score']}/100"
   else
     message = "No restaurant found with the name #{body}"
   end
